@@ -1,7 +1,7 @@
 const cards = document.querySelectorAll(".card");
 let matchedPairs = 0;
 let cardOne, cardTwo;
-let disableDeck = false;
+let disableDeck = false
 
 function flipCard(evt) { // take an event object's as a scoped variable
   const clickedCard = evt.target; // set the event's target DOM element as a variable
@@ -18,6 +18,10 @@ function flipCard(evt) { // take an event object's as a scoped variable
       let cardOneImg = cardOne.querySelector(".back-view img").src; // query the elements inside cardOne to get the value of the img src, such as `img-2.png`, and set that as the value of cardOneImg
       let cardTwoImg = cardTwo.querySelector(".back-view img").src; // query the elements inside cardOne to get the value of the img src, such as `img-2.png`, and set that as the value of cardTwoImg
       matchCards(cardOneImg, cardTwoImg); // now check the images by filename to see if they are a match!
+
+      
+      
+
   }
 }
 
@@ -67,3 +71,14 @@ function shuffleCards() {
 }
 
 shuffleCards(); // execute the shuffleCards function
+
+const reloadtButton = document.querySelector("#reload");
+// Reload everything:
+function reload() {
+    reload = location.reload();
+}
+// Event listeners for reload
+reloadButton.addEventListener("click", reload, false);
+
+
+ 
