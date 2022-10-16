@@ -18,10 +18,6 @@ function flipCard(evt) { // take an event object's as a scoped variable
       let cardOneImg = cardOne.querySelector(".back-view img").src; // query the elements inside cardOne to get the value of the img src, such as `img-2.png`, and set that as the value of cardOneImg
       let cardTwoImg = cardTwo.querySelector(".back-view img").src; // query the elements inside cardOne to get the value of the img src, such as `img-2.png`, and set that as the value of cardTwoImg
       matchCards(cardOneImg, cardTwoImg); // now check the images by filename to see if they are a match!
-
-      
-      
-
   }
 }
 
@@ -30,6 +26,9 @@ function matchCards(img1, img2) {
     matchedPairs++; // if the card images match, we can increment the global `matchedPairs` variable by 1 match
     if (matchedPairs == 8) { // if your number of matches is 8, you've made all the matches! Game Won!
         console.log('YOU WIN!');
+        targetWord = "YOU WIN!"; // set target word for when game is won
+        winnerMessage.innerHTML = `<span>${targetWord}</span>`; // YOU WIN! will appear on the screen when game is won
+        startConfetti(); // confetti.js will run and start the CONFETTI!
         return; // for now, lets call this game over, end this function and do nothing else.
     }
     // everything below will execute if the game has not yet been won...
@@ -72,13 +71,9 @@ function shuffleCards() {
 
 shuffleCards(); // execute the shuffleCards function
 
-const reloadtButton = document.querySelector("#reload");
-// Reload everything:
-function reload() {
-    reload = location.reload();
-}
-// Event listeners for reload
-reloadButton.addEventListener("click", reload, false);
+    //function for what happens when all pairs are found and the game is over
+    function gameOver() {
+      messageWinning();
+  }
 
-
- 
+  

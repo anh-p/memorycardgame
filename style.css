@@ -4,7 +4,13 @@
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
   }
-  
+
+  .container {
+    align-items: flex !important;
+    justify-content: fixed;
+    min-height: 100vh
+    }
+
   body {
     display: flex;
     align-items: center;
@@ -183,7 +189,8 @@ header {
   flex-direction: column;
   align-items: center;
   padding: 2rem;
-  color: white
+  color: white;
+  position: fixed;
 }
 
 h1 {
